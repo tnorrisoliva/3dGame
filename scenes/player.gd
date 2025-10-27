@@ -17,13 +17,20 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x *0.01)
 			camera.rotate_x(-event.relative.y *0.01)
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
+	if $neck/Camera3D/RayCast3D.is_colliding():
+		var target = $neck/Camera3D/RayCast3D.get_collider()
+		print(target)
+		if target and target.has_method("pickup"):
+			if Input.is_action_just_pressed('interact'):
+				target.pickup()
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

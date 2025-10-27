@@ -22,3 +22,6 @@ shape = SubResource("ConvexPolygonShape3D_o5qli")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.153857, 0)
 
 [node name="Camera3D" type="Camera3D" parent="neck"]
+
+[node name="RayCast3D" type="RayCast3D" parent="neck/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -0.0599162, -0.998203, 0, 0.998203, -0.0599162, 0, 0, 0)
