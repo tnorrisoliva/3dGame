@@ -6,6 +6,8 @@ const JUMP_VELOCITY = 4.5
 @onready var neck :=$neck
 @onready var camera :=$neck/Camera3D
 
+var inventory = [] # store collected keys
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton :
 		#locks mouse
@@ -30,7 +32,7 @@ func _physics_process(delta: float) -> void:
 		print(target)
 		if target and target.has_method("pickup"):
 			if Input.is_action_just_pressed('interact'):
-				target.pickup()
+				target.pickup(self)
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
