@@ -3,6 +3,10 @@ extends CanvasLayer
 
 
 @onready var message_label: Label = $Label
+@onready var inventory_label: Label = $"player inventory"
+
+
+
 var message_timer := 0.0
 var message_duration := 0.2
 func _ready():
@@ -14,6 +18,12 @@ func show_message(text: String, duration := 2.0):
 	message_label.visible = true
 	message_timer = 0.0
 	message_duration = duration
+
+func update_inventory(items: Array ):
+	if items.is_empty():
+		inventory_label.text= "Inventory: (empty)"
+	else: 
+		inventory_label.text = " Inventory:  " + ", ". join(items)
 
 func _process(delta):
 	if message_label.visible:
