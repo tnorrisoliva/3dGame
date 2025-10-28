@@ -10,6 +10,9 @@ extends CanvasLayer
 
 var message_timer := 0.0
 var message_duration := 0.2
+
+var fade_speed = 2.0
+
 func _ready():
 	message_label.text = ""
 	message_label.visible = false
@@ -36,4 +39,9 @@ func _process(delta):
 	if message_label.visible:
 		message_timer += delta
 		if message_timer > message_duration:
-			message_label.visible = false
+			#fade out on messages
+			var new_alpha = lerp(1.0, 0.0, (message_timer - message_duration)* fade_speed)
+			message_label.modulate.a = new_alpha
+			if new_alpha <= 0.01 :
+				message_label.modulate.a = 1.0
+				message_label.visible = false
