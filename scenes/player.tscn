@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://csts38ng2ptvt"]
+[gd_scene load_steps=5 format=3 uid="uid://csts38ng2ptvt"]
 
 [ext_resource type="Script" uid="uid://dw0guufagrxrm" path="res://scenes/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dcygkyp4p66c8" path="res://scenes/hud.gd" id="2_g2els"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sgp6g"]
 
@@ -25,3 +26,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.153857, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="neck/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, -0.0599162, -0.998203, 0, 0.998203, -0.0599162, 0, 0, 0)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("2_g2els")
+
+[node name="Label" type="Label" parent="HUD"]
+offset_left = 494.0
+offset_top = 336.0
+offset_right = 674.0
+offset_bottom = 359.0

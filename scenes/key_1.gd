@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 	pass
 func pickup(player) -> void:
 	print("picked up",key_name)
+	player.hud.show_message("picked up gold_key",1.0)
 	player.inventory.append(key_name)
 	$"..".hide()
 	queue_free()

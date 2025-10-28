@@ -5,8 +5,9 @@ const SPEED = 4.0
 const JUMP_VELOCITY = 4.5
 @onready var neck :=$neck
 @onready var camera :=$neck/Camera3D
+@onready var hud = $HUD
 
-var inventory = [] # store collected keys
+@export var inventory = [] # store collected keys
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton :
