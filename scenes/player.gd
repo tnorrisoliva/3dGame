@@ -9,6 +9,11 @@ const JUMP_VELOCITY = 4.5
 
 @export var inventory = [] # store collected keys
 
+ # function to add items to 
+func add_to_inventory(item_name: String):
+	inventory.append(item_name)
+	hud.update_inventory(inventory)
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton :
 		#locks mouse

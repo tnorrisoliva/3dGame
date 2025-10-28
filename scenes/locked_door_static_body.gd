@@ -9,6 +9,10 @@ func interact(player):
 	if required_key in player.inventory:
 		print("door unlocked with", required_key)
 		player.hud.show_message("door unlocked with gold key",1.0)
+		
+		player.inventory.erase(required_key)
+		player.hud.update_inventory(player.inventory)
+		
 		open_door()
 	else:
 		print("you need the", required_key)

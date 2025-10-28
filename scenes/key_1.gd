@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 func pickup(player) -> void:
 	print("picked up",key_name)
 	player.hud.show_message("picked up gold_key",1.0)
-	player.inventory.append(key_name)
+	# old way to add to inventory player.inventory.append(key_name)
+	player.add_to_inventory(key_name)
 	$"..".hide()
 	queue_free()
