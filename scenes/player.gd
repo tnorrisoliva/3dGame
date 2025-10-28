@@ -33,6 +33,9 @@ func _physics_process(delta: float) -> void:
 		if target and target.has_method("pickup"):
 			if Input.is_action_just_pressed('interact'):
 				target.pickup(self)
+				print (inventory)
+		elif target and target.has_method("interact") and Input.is_action_just_pressed('interact'):
+			target.interact(self)#refecnces interact methof not input
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
