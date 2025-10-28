@@ -4,6 +4,7 @@ extends CanvasLayer
 
 @onready var message_label: Label = $Label
 @onready var inventory_label: Label = $"player inventory"
+@onready var hover_label: Label = $"hover label"
 
 
 
@@ -12,12 +13,18 @@ var message_duration := 0.2
 func _ready():
 	message_label.text = ""
 	message_label.visible = false
+	hover_label.visable = true
 
 func show_message(text: String, duration := 2.0):
 	message_label.text = text
 	message_label.visible = true
 	message_timer = 0.0
 	message_duration = duration
+	
+func show_hover_message(text: String):
+	hover_label.visable = true
+	
+		
 
 func update_inventory(items: Array ):
 	if items.is_empty():

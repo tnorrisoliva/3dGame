@@ -32,10 +32,14 @@ script = ExtResource("2_g2els")
 
 [node name="Label" type="Label" parent="HUD"]
 offset_left = 494.0
-offset_top = 336.0
+offset_top = 205.0
 offset_right = 674.0
-offset_bottom = 359.0
+offset_bottom = 228.0
 
 [node name="player inventory" type="Label" parent="HUD"]
 offset_right = 165.0
 offset_bottom = 42.0
+
+[node name="hover label" type="Label" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 23.0

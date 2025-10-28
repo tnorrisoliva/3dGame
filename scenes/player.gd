@@ -37,6 +37,7 @@ func _physics_process(delta: float) -> void:
 		var target = $neck/Camera3D/RayCast3D.get_collider()
 		print(target)
 		if target and target.has_method("pickup"):
+			
 			if Input.is_action_just_pressed('interact'):
 				target.pickup(self)
 				print (inventory)
