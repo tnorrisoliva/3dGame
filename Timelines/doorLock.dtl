@@ -1,0 +1,6 @@
+set {Painting} = "1654"
+[text_input text="Code:" var="Painting"]
+if {Painting} == "1654":
+	unlocked
+else:
+	      Error. Try again.

@@ -7,6 +7,7 @@ var is_open = false
 func door_hover(player):
 	# shows Hud label if hovering
 	player.hud.show_hover_message(hover_label)
+	
 
 
 func interact(player):
