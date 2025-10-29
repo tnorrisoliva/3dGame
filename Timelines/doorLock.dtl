@@ -1,6 +1,3 @@
-set {Painting} = "1654"
-[text_input text="Code:" var="Painting"]
-if {Painting} == "1654":
-	unlocked
-else:
-	      Error. Try again.
+[text_input text="Enter PIN:" var="Painting"]
+[text text="Thank you. Processing your code..."]
+[end_timeline]

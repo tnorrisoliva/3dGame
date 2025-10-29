@@ -33,9 +33,7 @@ directories/dtl_directory={
 }
 variables={
 "PN": "",
-"Painting": "null",
-"locked": true,
-"pin ": "0"
+"Painting": ""
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]

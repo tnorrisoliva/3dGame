@@ -27,7 +27,7 @@ func interact(player):
 func open_door():
 	is_open = true
 	queue_free()
-	$"..".hide() # might delete depends on feedback
+	$"..".hide() 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
