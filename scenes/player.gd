@@ -42,6 +42,7 @@ func _physics_process(delta: float) -> void:
 		if target and target.has_method("key_hover"):
 			target.key_hover(self)
 		
+		#displays e to interact
 		elif target and  target.has_method("door_hover"):
 			target.door_hover(self)
 		
