@@ -1,7 +1,13 @@
 extends StaticBody3D
 
 @export var required_key: String = "gold_key"
+@export var hover_label:  String = "E to interact"
 var is_open = false
+
+func door_hover(player):
+	# shows Hud label if hovering
+	player.hud.show_hover_message(hover_label)
+
 
 func interact(player):
 	if is_open:

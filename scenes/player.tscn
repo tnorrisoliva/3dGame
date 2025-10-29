@@ -35,11 +35,15 @@ offset_left = 494.0
 offset_top = 205.0
 offset_right = 674.0
 offset_bottom = 228.0
+horizontal_alignment = 1
 
 [node name="player inventory" type="Label" parent="HUD"]
 offset_right = 165.0
 offset_bottom = 42.0
 
 [node name="hover label" type="Label" parent="HUD"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 472.0
+offset_top = 367.0
+offset_right = 670.0
+offset_bottom = 396.0
+horizontal_alignment = 1

@@ -29,20 +29,32 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 
 func _physics_process(delta: float) -> void:
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
 	if $neck/Camera3D/RayCast3D.is_colliding():
 		var target = $neck/Camera3D/RayCast3D.get_collider()
-		print(target)
+		#print(target)
+		#hover code
+		if target and target.has_method("key_hover"):
+			target.key_hover(self)
+		
+		elif target and  target.has_method("door_hover"):
+			target.door_hover(self)
+		
+		#pickup and inteact code
 		if target and target.has_method("pickup"):
-			
 			if Input.is_action_just_pressed('interact'):
 				target.pickup(self)
 				print (inventory)
 		elif target and target.has_method("interact") and Input.is_action_just_pressed('interact'):
 			target.interact(self)#refecnces interact methof not input
+	else:
+		hud.hide_hover_message()
+		
+
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

@@ -16,7 +16,8 @@ var fade_speed = 2.0
 func _ready():
 	message_label.text = ""
 	message_label.visible = false
-	hover_label.visable = true
+	hover_label.visible = false
+	hover_label.text = ""
 
 func show_message(text: String, duration := 2.0):
 	message_label.text = text
@@ -25,8 +26,11 @@ func show_message(text: String, duration := 2.0):
 	message_duration = duration
 	
 func show_hover_message(text: String):
-	hover_label.visable = true
-	
+	hover_label.visible = true
+	hover_label.text = text
+func hide_hover_message():
+	hover_label.visible = false
+	hover_label.text = ""
 		
 
 func update_inventory(items: Array ):
@@ -45,3 +49,5 @@ func _process(delta):
 			if new_alpha <= 0.01 :
 				message_label.modulate.a = 1.0
 				message_label.visible = false
+				
+			
