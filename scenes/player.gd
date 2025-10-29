@@ -1,8 +1,9 @@
 extends CharacterBody3D
 
 
-const SPEED = 4.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 3.0
+const JUMP_VELOCITY = 2.0
+
 @onready var neck :=$neck
 @onready var camera :=$neck/Camera3D
 @onready var hud = $HUD
