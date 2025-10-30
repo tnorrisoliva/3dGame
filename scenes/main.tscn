@@ -8,7 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://dhsdrnhqd5i02" path="res://assets/textures/ThreeKeyHoleDoor.PNG" id="5_85g3d"]
 [ext_resource type="Script" uid="uid://cojd6t17oorq1" path="res://scenes/clerck_static_body_3d.gd" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://vmcb6lvbnace" path="res://scenes/pin_door_static_body.gd" id="5_tefeu"]
+<<<<<<< HEAD
+[ext_resource type="Texture2D" uid="uid://bnhvalrc07006" path="res://assets/textures/OneKeyHoleDoor.PNG" id="6_tipki"]
+[ext_resource type="PackedScene" uid="uid://bvd5wd5hho2sa" path="res://assets/old_innCollision1.tscn" id="10_choun"]
+=======
 [ext_resource type="PackedScene" uid="uid://b7fo8fwbdctw5" path="res://assets/Old Inn.fbx" id="7_o6xl0"]
+>>>>>>> 7633b3698deda7f757593f0f32c3a20653bbf241
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -31,9 +36,6 @@ volumetric_fog_emission = Color(0.0402122, 0.146507, 0.0148976, 1)
 albedo_texture = ExtResource("1_o6xl0")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0wfyh"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sugp2"]
-data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_sugp2"]
 _surfaces = [{
@@ -98,13 +100,12 @@ transform = Transform3D(12.6034, 0, 0, 0, 1, 0, 0, 0, 12.2684, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_tipki")
 mesh = SubResource("PlaneMesh_0wfyh")
 
-[node name="floorStaticbody" type="StaticBody3D" parent="floor"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/floorStaticbody"]
-shape = SubResource("ConcavePolygonShape3D_sugp2")
-
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
+<<<<<<< HEAD
+transform = Transform3D(2.78663, 0, 0, 0, 4.12992, 0, 0, 0, 2.86, -1.1684, 1.16729, 3.23586)
+=======
 transform = Transform3D(2.71, 0, 0, 0, 2.71, 0, 0, 0, 2.71, 0.17252, 0.662552, 0.206954)
+>>>>>>> 7633b3698deda7f757593f0f32c3a20653bbf241
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.96681, 0.255496, 0, -0.255496, 0.96681, -0.00541973, 4.10354, -0.0324559)
@@ -153,7 +154,7 @@ script = ExtResource("5_tefeu")
 shape = SubResource("ConcavePolygonShape3D_tefeu")
 
 [node name="Clerk" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.26, 0, 0, 0, 0.26, 0, 0, 0, 0.26, 0.0924367, 0.241365, -2.34288)
+transform = Transform3D(0.485, 0, 0, 0, 0.485, 0, 0, 0, 0.485, -5.10925, 0.419294, -8.34347)
 mesh = SubResource("CapsuleMesh_tefeu")
 
 [node name="ClerkStaticBody3D" type="StaticBody3D" parent="Clerk"]
@@ -162,5 +163,10 @@ script = ExtResource("5_tbgi4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Clerk/ClerkStaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_o6xl0")
 
+<<<<<<< HEAD
+[node name="Old Inn" parent="." instance=ExtResource("10_choun")]
+transform = Transform3D(-150, 0, -1.31134e-05, 0, 150, 0, 1.31134e-05, 0, -150, -0.21235, -0.195924, -2.5843)
+=======
 [node name="Old Inn" parent="." instance=ExtResource("7_o6xl0")]
 transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 2.49144, -0.245575, 2.08285)
+>>>>>>> 7633b3698deda7f757593f0f32c3a20653bbf241
